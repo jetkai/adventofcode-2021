@@ -8,6 +8,10 @@ import java.nio.file.Path
  */
 class Answer {
 
+    /**
+     * Initializes the core functions within this class
+     * Prints the answers to the console
+     */
     fun init() {
         val inputDataList = readInputData()
         val modifiedDataList = readModifiedData(inputDataList)
@@ -16,6 +20,10 @@ class Answer {
         println("Part Two: ${calculateIncreases(modifiedDataList)}")
     }
 
+    /**
+     * Calculates the total amount of increased values within MutableList<InputData>
+     * @return the total amount of increased booleans (true) as an Integer
+     */
     private fun calculateIncreases(dataList : MutableList<InputData>) : Int {
         dataList.forEach {
             val lastIndex = it.index - 1
@@ -25,6 +33,10 @@ class Answer {
         return dataList.count { it.increased }
     }
 
+    /**
+     * Reads data from a file
+     * @return a MutableList with InputData(index, value, boolean)
+     */
     private fun readInputData() : MutableList<InputData> {
         val inputDataList = mutableListOf<InputData>()
         val inputDataPath = Path.of("./data/day1/input")
@@ -35,6 +47,11 @@ class Answer {
         return inputDataList
     }
 
+    /**
+     * Reads an existing MutableList
+     * @return a new MutableList with InputData(index, value, boolean)
+     * @param value within InputData has been modified
+     */
     private fun readModifiedData(inputDataList : MutableList<InputData>) : MutableList<InputData> {
         val modifiedDataList = mutableListOf<InputData>()
         inputDataList.forEach {

@@ -1,6 +1,6 @@
 package aoc.day1
 
-import kotlinx.serialization.Serializable
-
-@Serializable
+/**
+ * Author: Kai
+ */
 class InputData(val index : Int, val value : Int, var increased : Boolean)

@@ -10,3 +10,5 @@ build/reports/*
 build/test-results/*
 build/distributions/*
 build/scripts/*
+gradlew
+gradlew.bat
